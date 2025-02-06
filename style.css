@@ -18,19 +18,19 @@ body{
     padding: 10px;
 }
 
-.container path {
+.container .cls-9 {
     /* fill:#850707d5;
     stroke: #ea7d2a; */
     fill:#004f67;
     stroke: #99e7ff;
-    stroke-width: 12px;
+    stroke-width: 4px;
     transition: all 1s;
     transform-origin: 50% 50%;
     position: relative;
     z-index: -1;
     
 }
-.container svg path:hover {
+.container svg .cls-9:hover {
     /* fill: #b2b420a8; */
     fill: #99e7ff;
     stroke: #004f67;
@@ -40,7 +40,7 @@ body{
     
 }
 
-.container svg path {
+.container svg .cls-9 {
     position: relative;
     z-index: 1;
 }
