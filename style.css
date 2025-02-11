@@ -1,5 +1,5 @@
 body{
-    background: #0051ff22;
+    background: #f8f9fa;
     display: flex; /* es para centrar el contenido*/
     place-content: center center; /* es para centrar el contenido*/
     background: url(img/background2.jpg);
@@ -16,6 +16,7 @@ body{
     width: 100vh;
     height: auto;
     padding: 10px;
+    background-color: #f8f9fa
 }
 
 .container .cls-9 {
@@ -28,7 +29,9 @@ body{
     transform-origin: 50% 50%;
     position: relative;
     z-index: -1;
-    
+    /* 
+    <g <g onclick="abrirModal(this.id)" 
+    */
 }
 .container svg .cls-9:hover {
     /* fill: #b2b420a8; */
@@ -58,6 +61,7 @@ body{
     justify-content: center; /* Centrar horizontalmente */
     align-items: center; /* Centrar verticalmente */
     background-color: #f8f9fa; /* Color de fondo opcional */
+    flex-direction: column; /* Para que el div y los botones estén uno debajo del otro */
 }
 
 #lotes svg {

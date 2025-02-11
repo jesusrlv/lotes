@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" class="h-100" data-bs-theme="auto">
   <head>
+    <link rel="icon" type="image/png" href="img/logo.png">
     <script src="assets/js/color-modes.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +12,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cover/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="script.js"></script>
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -103,7 +105,7 @@
     <link href="cover.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
   </head>
-  <body class="d-flex h-100 text-center text-bg-dark">
+  <body class="d-flex h-100 text-center text-bg-light">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <!-- Definiciones de símbolos SVG -->
     </svg>
@@ -111,20 +113,27 @@
     <div class="cover-container d-flex w-100 p-1 mx-auto flex-column">
       <header class="mb-auto">
         <div>
-          <h3 class="float-md-start mb-0">Lotes</h3>
+          <h3 class="float-md-start mb-0">
+            <img src="img/logo.png" width="150" alt="">
+          </h3>
           <nav class="nav nav-masthead justify-content-center float-md-end">
             <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Inicio</a>
-            <a class="nav-link fw-bold py-1 px-0" href="#">Sección #1</a>
-            <a class="nav-link fw-bold py-1 px-0" href="#">Sección #2</a>
+            <a class="nav-link fw-bold py-1 px-0" href="#" onclick="zoomIn()">Zoom +</a>
+            <a class="nav-link fw-bold py-1 px-0" href="#">Zoom -</a>
           </nav>
         </div>
       </header>
 
       <main class="px-3">
+        <div class="container">
+          <button type="button" class="btn btn-primary btn-sm" onclick="zoomIn()">Zoom +</button>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="zoomOut()">Zoom -</button>
+        </div>
         <!-- lotes -->
         <div id="lotes" class="container w-100 d-flex justify-content-center align-items-center">
+          
     
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1738.77 896.93"><defs><style>.cls-1{fill:none;stroke:#0500db;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72px;}</style></defs><g onclick="abrirModal(this.id)" id="croquis"><image width="2999" height="1547" transform="translate(0 0) scale(0.58)" xlink:href="img/lotes_svg_3.png"/></g>
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1738.77 896.93" width="100%" height="100%"><defs><style>.cls-1{fill:none;stroke:#0500db;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72px;}</style></defs><g onclick="abrirModal(this.id)" id="croquis"><image width="2999" height="1547" transform="translate(0 0) scale(0.58)" xlink:href="img/lotes_svg_3.png"/></g>
           
             <g onclick="abrirModal(this.id)" id="Capa_2" data-name="Capa 2">
     
@@ -176,8 +185,21 @@
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="546.88 399.36 538.6 397.08 529.72 391.2 514.48 414.36 526.16 422.04 530.92 423.72 546.88 399.36"/></g><g onclick="abrirModal(this.id)" id="Capa_43" data-name="Capa 43">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="561.04 403.2 553.72 429.96 530.92 423.72 546.88 399.36 561.04 403.2"/></g><g onclick="abrirModal(this.id)" id="Capa_44" data-name="Capa 44"><polygon class="cls-1 cls-9 lote-svg" points="553.72,429.95 561.04,403.19 579.52,408.24 572.20,435.00"/>
                 </g><g onclick="abrirModal(this.id)" id="Capa_45" data-name="Capa 45">
-                <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="598.12 413.4 590.8 440.04 572.2 435 579.52 408.24 598.12 413.4"/></g><g onclick="abrirModal(this.id)" id="Capa_46" data-name="Capa 46">
-                <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="616.6 418.44 609.28 445.2 590.8 440.04 598.12 413.4 616.6 418.44"/></g><g onclick="abrirModal(this.id)" id="Capa_47" data-name="Capa 47"><rect  class="cls-1 cls-9 lote-svg" x="608.31" y="424.76" width="27.74" height="19.15" transform="translate(39.07 919.87) rotate(-74.7)"/></g><g onclick="abrirModal(this.id)" id="Capa_48" data-name="Capa 48">
+                <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="598.12 413.4 590.8 440.04 572.2 435 579.52 408.24 598.12 413.4"/></g>
+                
+                <g onclick="abrirModal(this.id)" id="Capa_46" data-name="Capa 46">
+                  <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="616.6 418.44 609.28 445.2 590.8 440.04 598.12 413.4 616.6 418.44"/>
+                </g>
+                <g onclick="abrirModal(this.id)" id="Capa_46" data-name="Capa 46">
+                  <polygon id="" class="cls-9 lote-svg" transform="translate(-45, -920)" points="616.6 418.44 609.28 445.2 590.8 440.04 598.12 413.4 616.6 418.44"/>
+                </g>
+
+                
+                <g onclick="abrirModal(this.id)" id="Capa_47" data-name="Capa 47" >
+                  <polygon points="648.35,1365.06 655.67,1338.30 674.15,1343.35 666.83,1370.11" transform="translate(-45, -920)" class="cls-9 lote-svg"/>
+                </g>
+                
+                <g onclick="abrirModal(this.id)" id="Capa_48" data-name="Capa 48">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="644.92 426.12 655.48 454.44 655.84 457.92 627.76 450.24 635.08 423.48 644.92 426.12"/></g><g onclick="abrirModal(this.id)" id="Capa_49" data-name="Capa 49">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="619.48 387.72 616.12 388.08 608.08 385.92 600.35 414.01 644.92 426.12 641.8 417.84 619.48 387.72"/></g><g onclick="abrirModal(this.id)" id="Capa_50" data-name="Capa 50">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="590.44 381 608.08 385.92 600.35 414.01 582.77 409.14 590.44 381"/></g><g onclick="abrirModal(this.id)" id="Capa_51" data-name="Capa 51">
@@ -321,7 +343,7 @@
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1184.32 234.6 1172.68 261.36 1156 254.04 1167.64 227.28 1184.32 234.6"/></g><g onclick="abrirModal(this.id)" id="Capa_190" data-name="Capa 190">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1201 241.8 1189.48 268.56 1172.68 261.36 1184.32 234.6 1201 241.8"/></g><g onclick="abrirModal(this.id)" id="Capa_191" data-name="Capa 191">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1217.8 249.12 1206.16 275.88 1189.48 268.56 1201 241.8 1217.8 249.12"/></g><g onclick="abrirModal(this.id)" id="Capa_192" data-name="Capa 192">
-                <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1234.48 256.32 1222.84 283.08 1206.16 275.88 1217.8 249.12 1234.48 256.32"/></g><g onclick="abrirModal(this.id)" id="Capa_193" data-name="Capa 193"><rect  class="cls-1 cls-9 lote-svg" x="1222.47" y="264.2" width="29.18" height="18.33" transform="translate(492.95 1298.71) rotate(-66.49)"/></g><g onclick="abrirModal(this.id)" id="Capa_194" data-name="Capa 194">
+                <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1234.48 256.32 1222.84 283.08 1206.16 275.88 1217.8 249.12 1234.48 256.32"/></g><g onclick="abrirModal(this.id)" id="Capa_193" data-name="Capa 193" transform="translate(-500, -1300)"> <polygon points="1715.79,1581.80 1727.43,1555.04 1744.23,1562.35 1732.59,1589.11" class="cls-1 cls-9 lote-svg"/></g><g onclick="abrirModal(this.id)" id="Capa_194" data-name="Capa 194">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1267.96 270.84 1256.32 297.6 1239.64 290.4 1251.28 263.64 1267.96 270.84"/></g><g onclick="abrirModal(this.id)" id="Capa_195" data-name="Capa 195">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1284.64 278.16 1273.12 304.92 1256.32 297.6 1267.96 270.84 1284.64 278.16"/></g><g onclick="abrirModal(this.id)" id="Capa_196" data-name="Capa 196">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1290.67 312.73 1273.15 305.17 1284.67 278.41 1288.87 280.21 1290.67 312.73"/></g><g onclick="abrirModal(this.id)" id="Capa_197" data-name="Capa 197">
@@ -337,11 +359,23 @@
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1487.44 366.12 1475.8 392.88 1459.12 385.56 1470.76 358.8 1487.44 366.12"/></g><g onclick="abrirModal(this.id)" id="Capa_207" data-name="Capa 207">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1504.12 373.32 1492.6 400.08 1509.28 407.28 1520.92 380.64 1504.12 373.32"/></g><g onclick="abrirModal(this.id)" id="Capa_208" data-name="Capa 208">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1537.6 387.84 1525.96 414.6 1509.28 407.28 1520.92 380.64 1537.6 387.84"/></g><g onclick="abrirModal(this.id)" id="Capa_209" data-name="Capa 209">
-                <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1554.28 395.04 1542.76 421.8 1525.96 414.6 1537.6 387.84 1554.28 395.04"/></g><g onclick="abrirModal(this.id)" id="Capa_210" data-name="Capa 210">
-                <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1571.08 402.36 1559.44 429.12 1542.76 421.8 1554.28 395.04 1571.08 402.36"/></g><g onclick="abrirModal(this.id)" id="Capa_211" data-name="Capa 211">
-                <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1587.76 409.56 1576.12 436.32 1559.44 429.12 1571.08 402.36 1587.76 409.56"/></g><g onclick="abrirModal(this.id)" id="Capa_212" data-name="Capa 212"><rect  class="cls-1 cls-9 lote-svg" x="1575.75" y="417.44" width="29.18" height="18.33" transform="translate(564.79 1714.79) rotate(-66.49)"/></g><g onclick="abrirModal(this.id)" id="Capa_213" data-name="Capa 213">
-                <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1621.24 424.08 1609.6 450.84 1592.92 443.64 1604.56 416.88 1621.24 424.08"/></g><g onclick="abrirModal(this.id)" id="Capa_214" data-name="Capa 214">
-                <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1637.92 431.4 1626.4 458.16 1609.6 450.84 1621.24 424.08 1637.92 431.4"/></g><g onclick="abrirModal(this.id)" id="Capa_215" data-name="Capa 215">
+                  <polygon class="cls-9 lote-svg cls-1" points="1554.28 395.04 1542.76 421.8 1525.96 414.6 1537.6 387.84 1554.28 395.04"/>
+                </g>
+                <g onclick="abrirModal(this.id)" id="Capa_210" data-name="Capa 210">
+                  <polygon class="cls-9 lote-svg cls-1" points="1571.08 402.36 1559.44 429.12 1542.76 421.8 1554.28 395.04 1571.08 402.36"/>
+                </g>
+                <g onclick="abrirModal(this.id)" id="Capa_211" data-name="Capa 211">
+                  <polygon class="cls-9 lote-svg cls-1" points="1587.76 409.56 1576.12 436.32 1559.44 429.12 1571.08 402.36 1587.76 409.56"/>
+                </g>
+                <g onclick="abrirModal(this.id)" id="Capa_212" data-name="Capa 212" transform="translate(-1000 -1000)"> 
+                  <polygon class="cls-9 lote-svg" points="1587.76 409.56 1576.12 436.32 1559.44 429.12 1571.08 402.36 1587.76 409.56"/>
+                </g>
+                <g onclick="abrirModal(this.id)" id="Capa_213" data-name="Capa 213">
+                  <polygon class="cls-9 lote-svg cls-1" points="1621.24 424.08 1609.6 450.84 1592.92 443.64 1604.56 416.88 1621.24 424.08"/>
+                </g>
+                <g onclick="abrirModal(this.id)" id="Capa_214" data-name="Capa 214">
+                  <polygon class="cls-9 lote-svg cls-1" points="1637.92 431.4 1626.4 458.16 1609.6 450.84 1621.24 424.08 1637.92 431.4"/>
+                </g><g onclick="abrirModal(this.id)" id="Capa_215" data-name="Capa 215">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1654.72 438.6 1643.08 465.36 1626.4 458.16 1637.92 431.4 1654.72 438.6"/></g><g onclick="abrirModal(this.id)" id="Capa_216" data-name="Capa 216">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1671.4 445.92 1659.76 472.68 1643.08 465.36 1654.72 438.6 1671.4 445.92"/></g><g onclick="abrirModal(this.id)" id="Capa_217" data-name="Capa 217">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1684 451.32 1672.36 478.08 1659.76 472.68 1671.4 445.92 1684 451.32"/></g><g onclick="abrirModal(this.id)" id="Capa_218" data-name="Capa 218">
@@ -424,7 +458,7 @@
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="84.76 319.92 97.96 299.76 70.68 282.24 70.12 302.88 84.76 319.92"/></g><g onclick="abrirModal(this.id)" id="Capa_295" data-name="Capa 295">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="108.28 316.08 132.64 332.04 116.32 356.76 96.24 333.3 108.28 316.08"/></g><g onclick="abrirModal(this.id)" id="Capa_296" data-name="Capa 296">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="118.24 300.84 108.28 316.08 132.64 332.04 142.6 316.8 118.24 300.84"/></g><g onclick="abrirModal(this.id)" id="Capa_297" data-name="Capa 297">
-                <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="128.32 285.6 118.24 300.84 142.6 316.8 152.68 301.68 128.32 285.6"/></g><g onclick="abrirModal(this.id)" id="Capa_298" data-name="Capa 298"><rect  class="cls-1 cls-9 lote-svg" x="136.4" y="271.43" width="18.27" height="29.19" transform="translate(-173.31 249.62) rotate(-56.52)"/></g><g onclick="abrirModal(this.id)" id="Capa_299" data-name="Capa 299">
+                <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="128.32 285.6 118.24 300.84 142.6 316.8 152.68 301.68 128.32 285.6"/></g><g onclick="abrirModal(this.id)" id="Capa_298" data-name="Capa 298"><polygon points="-51.73,521.84 -40.29,507.89 -15.14,524.69 -26.58,538.64" class="cls-1 cls-9 lote-svg" transform="translate(-173.31 249.62) rotate(-56.52)"/></g><g onclick="abrirModal(this.id)" id="Capa_299" data-name="Capa 299">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="148.36 255.12 138.4 270.36 162.76 286.44 172.72 271.2 148.36 255.12"/></g><g onclick="abrirModal(this.id)" id="Capa_300" data-name="Capa 300">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="155.2 244.8 148.36 255.12 172.72 271.2 185.44 251.76 159.64 244.92 155.2 244.8"/></g><g onclick="abrirModal(this.id)" id="Capa_301" data-name="Capa 301">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="215.2 259.68 202.48 279 178.13 262.93 185.44 251.76 215.2 259.68"/></g><g onclick="abrirModal(this.id)" id="Capa_302" data-name="Capa 302">
@@ -850,7 +884,7 @@
         <h1>Lotes Privada Granaderos Bernárdez</h1>
       </main>
 
-      <footer class="mt-auto text-white-50">
+      <footer class="mt-auto text-dark-50">
         <p>Desarrollado por <a href="https://nexustechstudio.com/" class="text-white" target="_blank">Nexus</a> | <a href="https://nexustechstudio.com/" class="text-white">Dev</a>.</p>
       </footer>
     </div>
@@ -860,11 +894,15 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="loteModalLabel">Detalles del Lote</h5>
+            <h5 class="modal-title text-dark" id="loteModalLabel">Detalles del Lote</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p id="loteInfo"></p>
+            <p id="lote" class="text-dark"></p>
+            <p class="text-start text-dark"># Lote:</p>
+            <p class="text-start text-dark">Nombre:</p>
+            <p class="text-start text-dark">Dirección</p>
+            <p class="text-start text-dark">Medidas</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -879,7 +917,7 @@
           console.log("ID recibido:", lote); // Para verificar que llega el ID correctamente
       
           // Modificar el contenido del modal con el ID recibido
-          document.getElementById(lote).innerText = 'Información del ' +lote;
+          document.getElementById('lote').innerText = 'Información del lote ' +lote;
       
           // Mostrar el modal
           const modal = new bootstrap.Modal(document.getElementById('loteModal'));
