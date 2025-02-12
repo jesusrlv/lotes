@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 12-02-2025 a las 07:54:40
+-- Tiempo de generación: 12-02-2025 a las 23:28:57
 -- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 7.4.29
+-- Versión de PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,8 +31,20 @@ CREATE TABLE `lote` (
   `id` int(11) NOT NULL,
   `capa` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `nombre` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `direccion` varchar(300) COLLATE utf8_unicode_ci NOT NULL
+  `direccion` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+  `telefono` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `manzana` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `lote` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `calle` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `superficie` varchar(30) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `lote`
+--
+
+INSERT INTO `lote` (`id`, `capa`, `nombre`, `direccion`, `telefono`, `manzana`, `lote`, `calle`, `superficie`) VALUES
+(1, 'Capa_782', 'JEsusRlv', 'Tulipanes 12 a', '4915000', '3', '5', 'Conocida', '100mts');
 
 -- --------------------------------------------------------
 
@@ -78,7 +90,7 @@ ALTER TABLE `usr`
 -- AUTO_INCREMENT de la tabla `lote`
 --
 ALTER TABLE `lote`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `usr`

@@ -12,6 +12,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cover/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <style>
       .bd-placeholder-img {
@@ -915,7 +916,7 @@
 
     <!-- Modal de Bootstrap -->
     <div class="modal fade" id="loteModal" tabindex="-1" aria-labelledby="loteModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title text-dark" id="loteModalLabel">Detalles del Lote</h5>
@@ -935,14 +936,42 @@
             </ul>
             <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                
+                <input type="text" name="" id="capa">
                 <p id="lote" class="text-dark"></p>
-                <p class="text-start text-dark">Manzana:</p>
-                <p class="text-start text-dark"># Lote:</p>
-                <p class="text-start text-dark">Calle:</p>
-                <p class="text-start text-dark">Superficie:</p>
+                <p class="text-start text-dark">
+
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Manzana</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="manzana" disabled>
+                  </div>
+                
+                </p>
+                <p class="text-start text-dark">
+                  
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Lote</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="lote2" disabled>
+                  </div>
+
+                </p>
+                <p class="text-start text-dark">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Calle</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="calle" disabled>
+                  </div>
+                </p>
+                <p class="text-start text-dark">
+                  
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Superficie</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="superficie" disabled>
+                  </div>
+
+                </p>
 
                 <div class="container text-end">
+                  <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Actualizar</button>
+                  <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Guardar</button>
                   <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                 </div>
 
@@ -950,12 +979,27 @@
               <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
 
                 <p id="lote" class="text-dark"></p>
-                <p class="text-start text-dark"># Lote:</p>
-                <p class="text-start text-dark">Nombre:</p>
-                <p class="text-start text-dark">Dirección:</p>
-                <p class="text-start text-dark">Medidas:</p>
+                <p class="text-start text-dark">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Nombre</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="nombre" disabled>
+                  </div>
+                </p>
+                <p class="text-start text-dark">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Dirección</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="direccion" disabled>
+                  </div>
+                </p>
+                <p class="text-start text-dark">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Teléfono</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="telefono" disabled>
+                  </div>
+                </p>
 
                 <div class="container text-end">
+                  <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Actualizar</button>
                   <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Apartar</button>
                   <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                 </div>
@@ -987,6 +1031,7 @@
           // Mostrar el modal
           const modal = new bootstrap.Modal(document.getElementById('loteModal'));
           modal.show();
+          revisarDB(lote);
       }
       </script>
       
