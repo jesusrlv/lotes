@@ -24,7 +24,7 @@ body{
     stroke: #ea7d2a; */
     fill:#004f67;
     stroke: #99e7ff;
-    stroke-width: 4px;
+    stroke-width: 2px;
     transition: all 1s;
     transform-origin: 50% 50%;
     position: relative;
