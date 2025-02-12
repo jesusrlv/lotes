@@ -1027,6 +1027,7 @@
       
           // Modificar el contenido del modal con el ID recibido
           document.getElementById('lote').innerText = 'Información del lote ' +lote;
+          document.getElementById('capa').value = lote;
       
           // Mostrar el modal
           const modal = new bootstrap.Modal(document.getElementById('loteModal'));
