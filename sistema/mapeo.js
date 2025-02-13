@@ -32,7 +32,7 @@ function datosGenerales() {
                             } else if(estatus == 0) {
                                 no_apartados = no_apartados + 1;
                                 polygon.style.fill = "#FAB806"; // Color para otros estatus
-                                polygon.style.stroke = "#FAB806"; // Color para otros estatus
+                                polygon.style.stroke = "#0076FA"; // Color para otros estatus
                             }
                         } else {
                             console.error(`Polygon no encontrado dentro del grupo con ID "${item.id}".`);
