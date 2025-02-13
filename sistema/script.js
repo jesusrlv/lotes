@@ -42,7 +42,8 @@ function revisarDB(lote) {
             console.log(jsonData);
             if (success == 1) {
                
-                // document.getElementById('capa').value = capa;
+                document.getElementById('btnGuardar').hidden = true; 
+                document.getElementById('btnActualizar').hidden = false; 
                 
                 document.getElementById('manzana').value = manzana; 
                 document.getElementById('lote2').value = lote;
@@ -57,6 +58,8 @@ function revisarDB(lote) {
             }
             else{
                 alert('No existen datos en el lote');
+                document.getElementById('btnGuardar').hidden = false; 
+                document.getElementById('btnActualizar').hidden = true; 
                 document.getElementById('manzana').value = ""; 
                 document.getElementById('lote2').value = "";
                 document.getElementById('calle').value = "";
@@ -115,6 +118,58 @@ function guardarDatos(){
                 });
             }
             else{
+                alert("No se guardaron los datos");
+                console.log(jsonData.error);
+            }
+        }
+    });
+}
+
+function actualizarDatos(){
+    let capa = document.getElementById('capa').value;
+    let manzana = document.getElementById('manzana').value; 
+    let lote = document.getElementById('lote2').value;
+    let calle = document.getElementById('calle').value;
+    let superficie = document.getElementById('superficie').value;
+    let nombre = document.getElementById('nombre').value;
+    let direccion = document.getElementById('direccion').value;
+    let telefono = document.getElementById('telefono').value;
+    let estatus = document.getElementById('estatus').value;
+
+    $.ajax({
+        url: 'prcd/actualizarLotes.php',
+        type: 'POST',
+        dataType: 'json',  // type of response we expect from the server
+        data: {
+            capa: capa,
+            manzana: manzana,
+            lote: lote,
+            calle: calle,
+            superficie: superficie,
+            nombre: nombre,
+            direccion: direccion,
+            telefono: telefono,
+            estatus: estatus
+
+        },
+        success: function(response) {
+            var jsonData = JSON.parse(JSON.stringify(response));
+            var success = jsonData.success;
+
+            if(success == 1){
+                Swal.fire({
+                    title: "Datos actualizados correctamente",
+                    text: "Actualizado correctamente",
+                    icon: "success",
+                    showCancelButton: false,
+                    confirmButtonText: "Aceptar",
+                    cancelButtonText: "Cancelar",
+                    confirmButtonColor: "#3085d6", // Azul
+                    cancelButtonColor: "#d33" // Rojo
+                });
+            }
+            else{
+                alert("No se guardaron los datos");
                 console.log(jsonData.error);
             }
         }
