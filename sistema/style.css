@@ -2,8 +2,8 @@ body{
     background: #f8f9fa;
     display: flex; /* es para centrar el contenido*/
     place-content: center center; /* es para centrar el contenido*/
-    background: url(img/background2.jpg);
-    background-color: rgba(0,0,0, 0.4);
+    /* background: url(img/background2.jpg); */
+    /* background-color: rgba(0,0,0, 0.4); */
 }
 
 /* .container{

@@ -12,13 +12,15 @@ function abrirModal(lote) {
     revisarDB(lote);
 }
 
-function zoomIn() {
-    let miDiv = document.getElementById('lotes');
-    miDiv.style.transform = 'scale(1.5)'; /* Restablece el tamaño al 100% */
-}
-function zoomOut() {
-    let miDiv = document.getElementById('lotes');
-    miDiv.style.transform = 'scale(1)'; /* Restablece el tamaño al 100% */
+function updateZoom(event) {
+    const svgContainer = document.getElementById('svgContainer');
+    const rect = svgContainer.getBoundingClientRect(); // Obtener el tamaño y posición del contenedor
+    const offsetX = event.clientX - rect.left; // Calcular la posición X del clic
+    const offsetY = event.clientY - rect.top; // Calcular la posición Y del clic
+
+    // Ajustar el origen de la transformación
+    svgContainer.style.transformOrigin = `${offsetX}px ${offsetY}px`;
+    svgContainer.style.transform = `scale(${scale})`; // Aplicar la transformación de escala
 }
 
 function revisarDB(lote) {

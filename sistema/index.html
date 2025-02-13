@@ -14,6 +14,7 @@
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="script.js"></script>
     <script src="mapeo.js"></script>
     <style>
@@ -108,7 +109,7 @@
     <link href="cover.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
   </head>
-  <body class="d-flex h-100 text-center text-bg-light" onload="datosGenerales(); mostrarModalCarga()">
+  <body class="d-flex h-100" onload="datosGenerales(); mostrarModalCarga()">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <!-- Definiciones de símbolos SVG -->
     </svg>
@@ -120,15 +121,14 @@
             <img src="img/logo.png" width="150" alt="">
           </h3>
           <nav class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Inicio</a>
-            <a class="nav-link fw-bold py-1 px-0" href="#" onclick="zoomIn()">Zoom +</a>
-            <a class="nav-link fw-bold py-1 px-0" href="#">Zoom -</a>
+            <a class="nav-link fw-bold py-1 px-0 active text-dark" aria-current="page" href="../index.html"><i class="bi bi-door-open"></i> Salir</a>
+            
           </nav>
         </div>
       </header>
 
       <main class="px-3">
-        <div class="container">
+        <div class="container" hidden>
           <button type="button" class="btn btn-primary btn-sm" onclick="zoomIn()">Zoom +</button>
           <button type="button" class="btn btn-secondary btn-sm" onclick="zoomOut()">Zoom -</button>
         </div>
@@ -905,14 +905,14 @@
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1315.68 557.42 1320.99 557.42 1333.6 555.43 1330.48 526.19 1318.96 527.78 1315.68 527.78 1315.68 557.42"/></g><g onclick="abrirModal(this.id)" id="Capa_777" data-name="Capa 777"><rect  class="cls-1 cls-9 lote-svg" x="1297.12" y="527.78" width="18.56" height="29.64"/></g><g onclick="abrirModal(this.id)" id="Capa_778" data-name="Capa 778"><rect  class="cls-1 cls-9 lote-svg" x="1278.97" y="527.78" width="18.15" height="29.64"/></g><g onclick="abrirModal(this.id)" id="Capa_779" data-name="Capa 779">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1261.49 557.42 1278.96 557.42 1278.96 527.78 1260.61 527.78 1261.49 557.42"/></g><g onclick="abrirModal(this.id)" id="Capa_780" data-name="Capa 780">
                 <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="1242.91 557.42 1261.49 557.42 1260.61 527.78 1242.91 527.78 1242.91 557.42"/></g><g onclick="abrirModal(this.id)" id="Capa_781" data-name="Capa 781"><rect  class="cls-1 cls-9 lote-svg" x="1224.55" y="527.78" width="18.36" height="29.64"/></g><g onclick="abrirModal(this.id)" id="Capa_782" data-name="Capa 782">
-                <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="499.52 803.61 521.42 784.03 537.88 803.61 515.86 822.19 499.52 803.61"/></g></svg>
+                <polygon id=""   class="cls-9 lote-svg" class="cls-1" points="499.52 803.61 521.42 784.03 537.88 803.61 515.86 822.19 499.52 803.61"/></g>
+              </svg>
         </div>
         <!-- lotes -->
-        <h1>Lotes Privada Granaderos Bernárdez</h1>
       </main>
 
-      <footer class="mt-auto text-dark-50">
-        <p>Desarrollado por <a href="https://nexustechstudio.com/" class="text-white" target="_blank">Nexus</a> | <a href="https://nexustechstudio.com/" class="text-white">Dev</a>.</p>
+      <footer class="mt-auto text-dark-50 text-center">
+        <p>Desarrollado por <a href="https://nexustechstudio.com/" class="text-secondary" target="_blank">Nexus</a> | <a href="https://nexustechstudio.com/" class="text-secondary">Dev</a>.</p>
       </footer>
     </div>
 
