@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
     <style>
       .bd-placeholder-img {
@@ -929,20 +930,20 @@
               <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Datos generales</button>
               </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Apartar</button>
-              </li>
+              
               
             </ul>
             <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                <input type="text" name="" id="capa">
+                <!-- datos hidden -->
+                <input type="text" value="" id="capa" hidden>
+                <!-- datos hidden -->
                 <p id="lote" class="text-dark"></p>
                 <p class="text-start text-dark">
 
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Manzana</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="manzana" disabled>
+                    <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="manzana">
                   </div>
                 
                 </p>
@@ -950,59 +951,60 @@
                   
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Lote</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="lote2" disabled>
+                    <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="lote2">
                   </div>
 
                 </p>
                 <p class="text-start text-dark">
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Calle</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="calle" disabled>
+                    <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="calle">
                   </div>
                 </p>
                 <p class="text-start text-dark">
                   
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Superficie</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="superficie" disabled>
+                    <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="superficie">
                   </div>
 
                 </p>
+                <hr>
 
-                <div class="container text-end">
-                  <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Actualizar</button>
-                  <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Guardar</button>
-                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-
-              </div>
-              <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-
-                <p id="lote" class="text-dark"></p>
                 <p class="text-start text-dark">
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Nombre</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="nombre" disabled>
+                    <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="nombre">
                   </div>
                 </p>
                 <p class="text-start text-dark">
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Dirección</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="direccion" disabled>
+                    <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="direccion">
                   </div>
                 </p>
                 <p class="text-start text-dark">
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Teléfono</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="telefono" disabled>
+                    <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="telefono">
                   </div>
                 </p>
 
-                <div class="container text-end">
-                  <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Actualizar</button>
-                  <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Apartar</button>
-                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                </div>
+                <p class="text-start text-dark">
+                  
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Estatus</span>
+                    <select class="form-select" aria-label="Default select example" id="estatus">
+                      <option selected value="">Selecciona estatus del lote ...</option>
+                      <option value="0">No apartado</option>
+                      <option value="1">Apartado</option>
+                    </select>
+                  </div>
+
+                </p>
+
+              </div>
+              <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
 
               </div>
               <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
@@ -1012,29 +1014,16 @@
             <!-- paginación -->
 
           </div>
-          <div class="modal-footer" hidden>
-            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Apartar</button>
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-warning" data-bs-dismiss="modal" id="btnActualizar" hidden>Actualizar</button>
+            <button type="button" class="btn btn-warning" data-bs-dismiss="modal" id="btnGuardar" onclick="guardarDatos()">Guardar</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
           </div>
         </div>
       </div>
     </div>
 
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      function abrirModal(lote) {
-          console.log("ID recibido:", lote); // Para verificar que llega el ID correctamente
-      
-          // Modificar el contenido del modal con el ID recibido
-          document.getElementById('lote').innerText = 'Información del lote ' +lote;
-          document.getElementById('capa').value = lote;
-      
-          // Mostrar el modal
-          const modal = new bootstrap.Modal(document.getElementById('loteModal'));
-          modal.show();
-          revisarDB(lote);
-      }
-      </script>
       
   </body>
 </html>

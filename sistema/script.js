@@ -1,3 +1,17 @@
+function abrirModal(lote) {
+    console.log("ID recibido:", lote); // Para verificar que llega el ID correctamente
+    document.getElementById('capa').value = "";
+
+    // Modificar el contenido del modal con el ID recibido
+    // document.getElementById('lote').innerText = 'Información del lote ' +lote;
+    document.getElementById('capa').value = lote;
+
+    // Mostrar el modal
+    const modal = new bootstrap.Modal(document.getElementById('loteModal'));
+    modal.show();
+    revisarDB(lote);
+}
+
 function zoomIn() {
     let miDiv = document.getElementById('lotes');
     miDiv.style.transform = 'scale(1.5)'; /* Restablece el tamaño al 100% */
@@ -24,10 +38,11 @@ function revisarDB(lote) {
             var lote = jsonData.lote
             var calle = jsonData.calle;
             var superficie = jsonData.superficie;
+            var estatus = jsonData.estatus;
             console.log(jsonData);
-            if (success = 1) {
+            if (success == 1) {
                
-                document.getElementById('capa').value = capa;
+                // document.getElementById('capa').value = capa;
                 
                 document.getElementById('manzana').value = manzana; 
                 document.getElementById('lote2').value = lote;
@@ -37,10 +52,70 @@ function revisarDB(lote) {
                 document.getElementById('nombre').value = nombre;
                 document.getElementById('direccion').value = direccion;
                 document.getElementById('telefono').value = telefono;
+                document.getElementById('estatus').value = estatus;
                 
             }
             else{
                 alert('No existen datos en el lote');
+                document.getElementById('manzana').value = ""; 
+                document.getElementById('lote2').value = "";
+                document.getElementById('calle').value = "";
+                document.getElementById('superficie').value = "";
+                console.log('capa: '+capa);
+                document.getElementById('nombre').value = "";
+                document.getElementById('direccion').value = "";
+                document.getElementById('telefono').value = "";
+                document.getElementById('estatus').value = "";
+            }
+        }
+    });
+}
+
+function guardarDatos(){
+    let capa = document.getElementById('capa').value;
+    let manzana = document.getElementById('manzana').value; 
+    let lote = document.getElementById('lote2').value;
+    let calle = document.getElementById('calle').value;
+    let superficie = document.getElementById('superficie').value;
+    let nombre = document.getElementById('nombre').value;
+    let direccion = document.getElementById('direccion').value;
+    let telefono = document.getElementById('telefono').value;
+    let estatus = document.getElementById('estatus').value;
+
+    $.ajax({
+        url: 'prcd/guardarLotes.php',
+        type: 'POST',
+        dataType: 'json',  // type of response we expect from the server
+        data: {
+            capa: capa,
+            manzana: manzana,
+            lote: lote,
+            calle: calle,
+            superficie: superficie,
+            nombre: nombre,
+            direccion: direccion,
+            telefono: telefono,
+            estatus: estatus
+
+        },
+        success: function(response) {
+            var jsonData = JSON.parse(JSON.stringify(response));
+            var success = jsonData.success;
+
+            if(success == 1){
+                Swal.fire({
+                    title: "Datos guardados correctamente",
+                    text: "Agregado correctamente",
+                    icon: "success",
+                    showCancelButton: false,
+                    confirmButtonText: "Aceptar",
+                    cancelButtonText: "Cancelar",
+                    confirmButtonColor: "#3085d6", // Azul
+                    cancelButtonColor: "#d33" // Rojo
+                });
+            }
+            else{
+                console.log(jsonData.error);
             }
         }
     });
