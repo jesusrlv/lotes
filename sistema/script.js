@@ -85,6 +85,11 @@ function guardarDatos(){
     let telefono = document.getElementById('telefono').value;
     let estatus = document.getElementById('estatus').value;
 
+    if(estatus == "" || estatus == null){
+        alert('Debes seleccionar estatus del lote para guardar');
+        return;
+    }
+
     $.ajax({
         url: 'prcd/guardarLotes.php',
         type: 'POST',
@@ -116,6 +121,7 @@ function guardarDatos(){
                     confirmButtonColor: "#3085d6", // Azul
                     cancelButtonColor: "#d33" // Rojo
                 });
+                datosGenerales();
             }
             else{
                 alert("No se guardaron los datos");
@@ -135,6 +141,11 @@ function actualizarDatos(){
     let direccion = document.getElementById('direccion').value;
     let telefono = document.getElementById('telefono').value;
     let estatus = document.getElementById('estatus').value;
+
+    if(estatus == "" || estatus == null){
+        alert('Debes seleccionar estatus del lote para guardar');
+        return;
+    }
 
     $.ajax({
         url: 'prcd/actualizarLotes.php',
@@ -167,6 +178,7 @@ function actualizarDatos(){
                     confirmButtonColor: "#3085d6", // Azul
                     cancelButtonColor: "#d33" // Rojo
                 });
+                datosGenerales();
             }
             else{
                 alert("No se guardaron los datos");
