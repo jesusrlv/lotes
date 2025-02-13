@@ -73,3 +73,18 @@ main{
     margin: 0;
     padding: 0;
 }
+
+/* simulación de carga */
+
+.progress-bar {
+    width: 100%;
+    background-color: #ddd;
+}
+
+.progress {
+    height: 30px;
+    width: 0;
+    background-color: #4caf50; /* Color de la barra de progreso */
+    transition: width 0.1s; /* Transición suave */
+}
+/* simulación de carga */

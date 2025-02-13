@@ -47,3 +47,22 @@ function datosGenerales() {
         }
     });
 }
+
+function mostrarModalCarga() {
+    const modal = document.getElementById('loadingModal');
+    const progress = document.getElementById('progress');
+    let width = 0;
+
+    $("#loadingModal").modal('show');
+
+    const interval = setInterval(() => {
+        if (width >= 100) {
+            clearInterval(interval);
+            // modal.style.display = 'none'; // Ocultar el modal al finalizar
+            $("#loadingModal").modal('hide');
+        } else {
+            width++; // Incrementar el ancho de la barra
+            progress.style.width = width + '%'; // Actualizar el ancho de la barra
+        }
+    }, 12); // Ajusta el intervalo para que complete en 9 segundos
+}

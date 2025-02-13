@@ -108,7 +108,7 @@
     <link href="cover.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
   </head>
-  <body class="d-flex h-100 text-center text-bg-light" onload="datosGenerales()">
+  <body class="d-flex h-100 text-center text-bg-light" onload="datosGenerales(); mostrarModalCarga()">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <!-- Definiciones de símbolos SVG -->
     </svg>
@@ -1025,6 +1025,28 @@
     </div>
 
     <!-- carga -->
+    <!-- Modal -->
+    <div class="modal fade" id="loadingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Espere un momento ...</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h2>Cargando...</h2>
+              <div class="progress-bar">
+                  <div id="progress" class="progress"></div>
+              </div>
+          <div class="modal-footer" hidden>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <div id="loadingModal" class="modal">
       <div class="modal-content">
           <h2>Cargando...</h2>
