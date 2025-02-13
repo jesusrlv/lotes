@@ -939,54 +939,58 @@
                 <!-- datos hidden -->
                 <input type="text" value="" id="capa" hidden>
                 <!-- datos hidden -->
+                <h5 class="mt-3">Datos lote</h5>
                 <p id="lote" class="text-dark"></p>
                 <p class="text-start text-dark">
-
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Manzana</span>
-                    <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="manzana">
-                  </div>
-                
-                </p>
-                <p class="text-start text-dark">
-                  
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Lote</span>
-                    <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="lote2">
-                  </div>
-
-                </p>
-                <p class="text-start text-dark">
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Calle</span>
-                    <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="calle">
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><i class="bi bi-building"></i> Manzana</span>
+                        <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="manzana">
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><i class="bi bi-building"></i> Lote</span>
+                        <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="lote2">
+                      </div>
+                    </div>
                   </div>
                 </p>
                 <p class="text-start text-dark">
-                  
-                  <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Superficie</span>
-                    <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="superficie">
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><i class="bi bi-signpost-split"></i> Calle</span>
+                        <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="calle">
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><i class="bi bi-crosshair"></i> Superficie</span>
+                        <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="superficie">
+                      </div>
+                    </div>
                   </div>
-
                 </p>
+  
                 <hr>
-
+                <h5>Datos personales</h5>
                 <p class="text-start text-dark">
                   <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Nombre</span>
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-person"></i> Nombre</span>
                     <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="nombre">
                   </div>
                 </p>
                 <p class="text-start text-dark">
                   <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Dirección</span>
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-house"></i> Dirección</span>
                     <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="direccion">
                   </div>
                 </p>
                 <p class="text-start text-dark">
                   <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Teléfono</span>
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-telephone-forward"></i> Teléfono</span>
                     <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" id="telefono">
                   </div>
                 </p>
@@ -994,7 +998,7 @@
                 <p class="text-start text-dark">
                   
                   <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Estatus</span>
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-arrow-down-up"></i> Estatus</span>
                     <select class="form-select" aria-label="Default select example" id="estatus">
                       <option selected value="">Selecciona estatus del lote ...</option>
                       <option value="0">No apartado</option>
@@ -1016,9 +1020,9 @@
 
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-warning" data-bs-dismiss="modal" id="btnActualizar" onclick="actualizarDatos()" hidden>Actualizar</button>
-            <button type="button" class="btn btn-warning" data-bs-dismiss="modal" id="btnGuardar" onclick="guardarDatos()">Guardar</button>
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="btnActualizar" onclick="actualizarDatos()" hidden><i class="bi bi-floppy"></i> Actualizar</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="btnGuardar" onclick="guardarDatos()"><i class="bi bi-floppy"></i> Guardar</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i> Cerrar</button>
           </div>
         </div>
       </div>
@@ -1026,12 +1030,12 @@
 
     <!-- carga -->
     <!-- Modal -->
-    <div class="modal fade" id="loadingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="loadingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Espere un momento ...</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" hidden></button>
           </div>
           <div class="modal-body">
             <h2>Cargando...</h2>
