@@ -1,4 +1,5 @@
 function datosGenerales() {
+    var apartados = 0, no_apartados = 0;
     $.ajax({
         type: "POST",
         url: "prcd/mapeo.php", // Cambia esto por la ruta de tu script PHP
@@ -25,9 +26,11 @@ function datosGenerales() {
                         if (polygon) {
                             // Cambia el color según la condición
                             if (estatus == 1) {
+                                apartados = apartados + 1;
                                 polygon.style.fill = "#0076FA"; // Color para estatus 1
                                 polygon.style.stroke = "#6EDBFA"; // Color para estatus 1
                             } else if(estatus == 0) {
+                                no_apartados = no_apartados + 1;
                                 polygon.style.fill = "#FAB806"; // Color para otros estatus
                                 polygon.style.stroke = "#FAB806"; // Color para otros estatus
                             }
@@ -39,6 +42,9 @@ function datosGenerales() {
                     }
                 });
             }
+            document.getElementById("apartados").innerText =  apartados;
+            document.getElementById("no_apartados").innerText =  no_apartados;
+
         },
         error: function(xhr, status, error) {
             console.error('Error en AJAX:', error);
