@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 13-02-2025 a las 19:22:49
+-- Tiempo de generación: 10-03-2025 a las 23:33:05
 -- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 7.4.29
+-- Versión de PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,18 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `lotes`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `foto`
+--
+
+CREATE TABLE `foto` (
+  `id` int(11) NOT NULL,
+  `ruta` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `id_ext` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -79,6 +91,12 @@ INSERT INTO `usr` (`id`, `usr`, `pwd`, `perfil`) VALUES
 --
 
 --
+-- Indices de la tabla `foto`
+--
+ALTER TABLE `foto`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `lote`
 --
 ALTER TABLE `lote`
@@ -93,6 +111,12 @@ ALTER TABLE `usr`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `foto`
+--
+ALTER TABLE `foto`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `lote`
