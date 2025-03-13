@@ -58,6 +58,8 @@ function revisarDB(lote) {
                 document.getElementById('telefono').value = telefono;
                 document.getElementById('estatus').value = estatus;
                 document.getElementById('tipoLote').value = tipoLote;
+
+                queryPhoto(capa);
                 
             }
             else{
@@ -77,6 +79,24 @@ function revisarDB(lote) {
         }
     });
 }
+
+function queryPhoto(capa){
+    $.ajax({
+        url: 'prcd/queryPhotos.php',
+        type: 'POST',
+        data:{
+            capa: capa
+        },
+        dataType: 'html', 
+        success: function(data) {
+            $('#fotosLote').html(data);  
+        }
+    });
+  }
+  function inside(imagen){
+    $("#modalInside").modal("show");
+    document.getElementById("inside").setAttribute("src", "fotos/"+imagen+"");
+  }
 
 function guardarDatos(){
     let capa = document.getElementById('capa').value;
