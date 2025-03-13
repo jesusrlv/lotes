@@ -19,6 +19,7 @@ require('conn.php');
         $calle = $row['calle'];
         $superficie = $row['superficie'];
         $estatus = $row['estatus'];
+        $tipoLote = $row['tipo_lote'];
 
         echo json_encode(array(
             'success'=>1,
@@ -30,7 +31,8 @@ require('conn.php');
             'lote'=>$lote,
             'calle'=>$calle,
             'superficie'=>$superficie,
-            'estatus'=>$estatus
+            'estatus'=>$estatus,
+            'tipoLote'=>$tipoLote
         ));
     }
     else{

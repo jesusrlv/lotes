@@ -924,7 +924,7 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title text-dark" id="loteModalLabel">Detalles del Lote</h5>
+            <h5 class="modal-title text-light" id="loteModalLabel">Detalles del Lote</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -1002,7 +1002,6 @@
                 </p>
 
                 <p class="text-start text-dark">
-                  
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-arrow-down-up"></i> Estatus</span>
                     <select class="form-select" aria-label="Default select example" id="estatus">
@@ -1011,7 +1010,18 @@
                       <option value="1">Apartado</option>
                     </select>
                   </div>
+                </p>
 
+                <p class="text-start text-dark">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-bookmarks-fill"></i> Tipo de lote</span>
+                    <select class="form-select" aria-label="Default select example" id="tipoLote">
+                      <option selected value="">Selecciona tipo del lote ...</option>
+                      <option value="0">Sin categoría</option>
+                      <option value="1">Urbanizado</option>
+                      <option value="2">No urbanizado</option>
+                    </select>
+                  </div>
                 </p>
 
               </div>

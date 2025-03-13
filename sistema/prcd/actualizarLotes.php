@@ -11,6 +11,7 @@ require('conn.php');
     $calle = $_POST['calle'];
     $superficie = $_POST['superficie'];
     $estatus = $_POST['estatus'];
+    $tipoLote = $_POST['tipoLote'];
 
     $query = "UPDATE lote SET
         nombre = '$nombre',
@@ -20,7 +21,8 @@ require('conn.php');
         lote = '$lote',
         calle = '$calle',
         superficie = '$superficie',
-        estatus = '$estatus' 
+        estatus = '$estatus',
+        tipo_lote = '$tipoLote' 
     WHERE 
         capa = '$capa'
     ";

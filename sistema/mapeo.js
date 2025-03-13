@@ -16,6 +16,7 @@ function datosGenerales() {
                     // Suponiendo que cada item tiene un 'id' y 'estatus'
                     var grupo = document.getElementById(item.capa); // Obtener el grupo por su ID
                     var estatus = item.estatus; // Cambia 'estatus' por el nombre de la propiedad que contiene el estatus
+                    var tipoLote = item.tipo_lote;
 
                     // Verifica si el grupo existe antes de modificarlo
                     if (grupo) {
@@ -29,10 +30,20 @@ function datosGenerales() {
                                 apartados = apartados + 1;
                                 polygon.style.fill = "#0076FA"; // Color para estatus 1
                                 polygon.style.stroke = "#6EDBFA"; // Color para estatus 1
-                            } else if(estatus == 0) {
+                            } else if(estatus == 0) { // sin categoría
                                 no_apartados = no_apartados + 1;
-                                polygon.style.fill = "#FAB806"; // Color para otros estatus
-                                polygon.style.stroke = "#0076FA"; // Color para otros estatus
+                                if(tipoLote == 0 || tipoLote == ""){
+                                    polygon.style.fill = "#dc3545"; // Color para otros estatus
+                                    polygon.style.stroke = "#0076FA"; // Color para otros estatus
+                                }
+                                else if(tipoLote == 1){ //urbanizado
+                                    polygon.style.fill = "#198754"; // Color para otros estatus
+                                    polygon.style.stroke = "#0076FA"; // Color para otros estatus
+                                }
+                                else if(tipoLote == 2){ //urbanizado
+                                    polygon.style.fill = "#dc3545"; // Color para otros estatus
+                                    polygon.style.stroke = "#0076FA"; // Color para otros estatus
+                                }
                             }
                         } else {
                             console.error(`Polygon no encontrado dentro del grupo con ID "${item.id}".`);

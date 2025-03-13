@@ -11,6 +11,7 @@ require('conn.php');
     $calle = $_POST['calle'];
     $superficie = $_POST['superficie'];
     $estatus = $_POST['estatus'];
+    $tipoLote = $_POST['tipoLote'];
 
     $query = "INSERT INTO lote (
         capa,
@@ -21,7 +22,8 @@ require('conn.php');
         lote,
         calle,
         superficie,
-        estatus
+        estatus,
+        tipo_lote
     )
     VALUES(
         '$capa',
@@ -32,7 +34,8 @@ require('conn.php');
         '$lote',
         '$calle',
         '$superficie',
-        '$estatus'
+        '$estatus',
+        '$tipoLote'
     )";
     $resultado = $conn->query($query);
 

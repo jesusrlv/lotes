@@ -41,6 +41,7 @@ function revisarDB(lote) {
             var calle = jsonData.calle;
             var superficie = jsonData.superficie;
             var estatus = jsonData.estatus;
+            var tipoLote = jsonData.tipoLote;
             console.log(jsonData);
             if (success == 1) {
                
@@ -56,6 +57,7 @@ function revisarDB(lote) {
                 document.getElementById('direccion').value = direccion;
                 document.getElementById('telefono').value = telefono;
                 document.getElementById('estatus').value = estatus;
+                document.getElementById('tipoLote').value = tipoLote;
                 
             }
             else{
@@ -86,6 +88,7 @@ function guardarDatos(){
     let direccion = document.getElementById('direccion').value;
     let telefono = document.getElementById('telefono').value;
     let estatus = document.getElementById('estatus').value;
+    let tipoLote = document.getElementById('tipoLote').value;
 
     if(estatus == "" || estatus == null){
         alert('Debes seleccionar estatus del lote para guardar');
@@ -105,7 +108,8 @@ function guardarDatos(){
             nombre: nombre,
             direccion: direccion,
             telefono: telefono,
-            estatus: estatus
+            estatus: estatus,
+            tipoLote:tipoLote
 
         },
         success: function(response) {
@@ -143,6 +147,7 @@ function actualizarDatos(){
     let direccion = document.getElementById('direccion').value;
     let telefono = document.getElementById('telefono').value;
     let estatus = document.getElementById('estatus').value;
+    let tipoLote = document.getElementById('tipoLote').value;
 
     if(estatus == "" || estatus == null){
         alert('Debes seleccionar estatus del lote para guardar');
@@ -162,7 +167,8 @@ function actualizarDatos(){
             nombre: nombre,
             direccion: direccion,
             telefono: telefono,
-            estatus: estatus
+            estatus: estatus,
+            tipoLote: tipoLote
 
         },
         success: function(response) {
