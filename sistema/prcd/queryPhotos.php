@@ -12,7 +12,7 @@ require('conn.php');
         echo'
             <div class="col-3 text-center position-relative">
                 <img src="fotos/'.$row['ruta'].'" class="img-thumbnail" alt="..." onclick="inside(\''.$row['ruta'].'\')">
-                    <span class="badge rounded-pill text-bg-danger mt-2 position-absolute" style="bottom: 10px; left: 50%; transform: translateX(-50%);" onclick="deleteImage('.$row['id'].')"><i class="bi bi-trash"></i></span>
+                    <span class="badge rounded-pill text-bg-danger mt-2 position-absolute" style="bottom: 10px; left: 50%; transform: translateX(-50%);" onclick="deleteImage('.$row['id'].',\''.$row['id_ext'].'\')"><i class="bi bi-trash"></i></span>
             </div>
         ';
 

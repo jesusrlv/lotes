@@ -98,6 +98,44 @@ function queryPhoto(capa){
     document.getElementById("inside").setAttribute("src", "fotos/"+imagen+"");
   }
 
+  function deleteImage(idImg, capa) {
+    var id = idImg;
+    if (confirm("¿Estás seguro de que deseas eliminar la imagen?")) {
+
+        $.ajax({
+            type: "POST",
+            url: "prcd/deleteImage.php",
+            data: {
+                id: id
+                },
+            success: function(data){
+                var jsonData = JSON.parse(JSON.stringify(data));
+                var success = jsonData.success;
+                if(success = 1){
+                    Swal.fire({
+                        icon: "success",
+                        title: "Imagen eliminada",
+                        text: "La imagen ha sido eliminada exitosamente",
+                        footer: "Lotes"
+                    }).then(function(){
+                        queryPhoto(capa);
+                    });
+                } else {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error al eliminar la imagen",
+                        text: "Hubo un error al eliminar la imagen",
+                        footer: "Lotes"
+                    });
+                }
+            }
+        });
+    } else {
+        // Si el usuario hace clic en "Cancelar", no hacer nada
+        console.log("Cancelado");
+    }
+}
+
 function guardarDatos(){
     let capa = document.getElementById('capa').value;
     let manzana = document.getElementById('manzana').value; 
